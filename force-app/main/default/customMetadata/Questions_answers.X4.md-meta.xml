@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>4</label>
+    <protected>false</protected>
+    <values>
+        <field>Answer__c</field>
+        <value xsi:type="xsd:string">To test and develop applications</value>
+    </values>
+    <values>
+        <field>Options__c</field>
+        <value xsi:type="xsd:string">To store customer data,To test and develop applications,To manage user permissions,To generate reports</value>
+    </values>
+    <values>
+        <field>Questions__c</field>
+        <value xsi:type="xsd:string">What is the purpose of a Salesforce Sandbox?</value>
+    </values>
+</CustomMetadata>

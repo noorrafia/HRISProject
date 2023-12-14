@@ -1,0 +1,67 @@
+<!-- MapMultiSelect.page -->
+<apex:page controller="MapController">
+    <apex:outputPanel rendered="{!displayDetile == true}">
+    <apex:form >
+		<div class="" style= "text-align: center; padding-top: 64px;"> 
+        <h3>Login with An Registered Email and Name</h3>
+            <br/>
+        <label for="name">Name:</label>
+        <apex:inputText id="name" value="{!userName}" required="true" />
+        <br />
+        <label for="email">Email:</label>
+        <apex:inputText id="email" value="{!userEmail}" required="true"/>
+        <br />
+            <div class="submit-button1">
+                <apex:commandButton value="Proceed To Test" action="{!submitForm}"/>
+            </div>
+        </div>
+    </apex:form>
+    </apex:outputPanel> 
+    <apex:outputPanel rendered="{!displayExmForm == true}"> -->
+    <apex:form >
+        <apex:pageBlock title="Apttitude and Technical">
+            <apex:pageBlockSection >
+                <apex:repeat value="{!mapEntries}" var="entry">
+                    <p>{!entry.key}</p>
+                    <apex:selectCheckboxes value="{!selectedValues[entry.key]}">
+                        <apex:selectOptions value="{!entry.values}" />
+                    </apex:selectCheckboxes>
+                </apex:repeat>
+            </apex:pageBlockSection>
+
+            <!-- Button to submit the form -->
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Submit" action="{!submitData}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+        </apex:outputPanel> 
+    <apex:outputPanel rendered="{!displayPopUp == true}"> <!-- Thank you message in French -->
+                                 <div class="chines" style= "text-align: center;padding-top: 45px;"> 
+                              <h3>
+                                  Congratulations, you cleared first round further interview shedule communication will be  updated through mail allthe best
+                                     </h3>    
+                                 </div>
+                              </apex:outputPanel>
+    <apex:outputPanel rendered="{!displayPopUpForReject == true}"> <!-- Thank you message in French -->
+                                 <div class="chines" style= "text-align: center; padding-top: 45px;"> 
+                                     <h3>
+                                         Regret to inform you that you are not Qualified for next rounds. Thank you!
+                                     </h3>
+                                 </div>
+                              </apex:outputPanel>
+    <apex:outputPanel rendered="{!errorMessage == true}">  <!-- Thank you message in French -->
+                                 <div class="chines" style= "text-align: center;padding-top: 45px;"> 
+                                 <h3>
+                                     You are not registered for this exam please regiter and visit again. Thank You!
+                                     </h3>
+                                 </div>
+                              </apex:outputPanel>
+        <apex:outputPanel rendered="{!errorMessage == true}">
+            <apex:form >
+                <div class="chines" style= "text-align: center;padding-top: 45px;"> 
+                <apex:commandButton value="Login with an Registered email" action="{!backToLogin}" />
+                </div>
+            </apex:form>
+            </apex:outputPanel>
+</apex:page>
