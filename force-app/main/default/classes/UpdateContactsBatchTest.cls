@@ -10,7 +10,7 @@ private class UpdateContactsBatchTest {
                 con.FirstName = 'TestFirstName' + i;
                 con.LastName = 'TestLastName' + i;
                 con.Email = 'test' + i + '@example.com';
-                // Allocated_Slot__c is intentionally left blank
+                // Allocated_Slot__c is intentionally left blank 
                 contacts.add(con);
         }
         insert contacts;
